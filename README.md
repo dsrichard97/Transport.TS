@@ -1,5 +1,17 @@
 # TSstudio <a href='https://ramikrispin.github.io/TSstudio/'><img src='man/figures/TSstudio logo.png' align="right"  /></a>
 
+### Quick Links
+<ul style="list-style: none; padding: 0;">
+  <li><a href="#overview" style="text-decoration: none; color: #007acc;">Overview</a></li>
+  <li><a href="#install" style="text-decoration: none; color: #007acc;">Installation</a></li>
+  <li><a href="#usage" style="text-decoration: none; color: #007acc;">Usage</a></li>
+  <li><a href="https://example.com" style="text-decoration: none; color: #007acc;" target="_blank">External Link</a></li>
+</ul>
+
+</div>
+
+</div>
+
 
 
 <!-- badges: start -->
