@@ -1,18 +1,15 @@
-# TSstudio <a href='https://ramikrispin.github.io/TSstudio/'><img src='man/figures/TSstudio logo.png' align="right"  /></a>
+# Transport Trend Analysis <a href='https://dsrichard97.github.io/Transport.TS/'><img src='photos/Transport.png' style="float: right; width: 300px; height: auto; margin-left: 20px; margin-top: 10px;" /></a>
+
 
 ### Quick Links
 <ul style="list-style: none; padding: 0;">
   <li><a href="#overview" style="text-decoration: none; color: #007acc;">Overview</a></li>
+  <li><a href="#business-case" style="text-decoration: none; color: #007acc;">Business-Case</a></li>
+  <li><a href="#aboutdata" style="text-decoration: none; color: #007acc;">About Data</a></li>
   <li><a href="#install" style="text-decoration: none; color: #007acc;">Installation</a></li>
   <li><a href="#usage" style="text-decoration: none; color: #007acc;">Usage</a></li>
-  <li><a href="https://example.com" style="text-decoration: none; color: #007acc;" target="_blank">External Link</a></li>
+  <li><a href="https://example.com" style="text-decoration: none; color: #007acc;" target="_blank">Github Repo</a></li>
 </ul>
-
-</div>
-
-</div>
-
-
 
 <!-- badges: start -->
 
@@ -24,9 +21,67 @@
 
 <!-- badges: end -->
 
-The [TSstudio](https://ramikrispin.github.io/TSstudio/) package provides a set of tools descriptive and predictive analysis of time series data. That includes utility functions for preprocessing time series data,  interactive visualization functions based on the [plotly](https://CRAN.R-project.org/package=plotly) package engine, and set of tools for training and evaluating time series forecasting models from the [forecast](https://CRAN.R-project.org/package=forecast), [forecastHybrid](https://CRAN.R-project.org/package=forecastHybrid), and [bsts](https://CRAN.R-project.org/package=bsts) packages.
+Overview
+------------
 
-More information available on the package [vignettes](https://ramikrispin.github.io/TSstudio/articles/).
+The [RSocrata](https://dev.socrata.com/) package provides a set of tools tha tallows you open data from governments, non-profits, and NGOs around the world. The goal of this project is to showcase how fun it is to get data from online open sources and repackage data. This project focuses on the utility of using time series data, [tableau](https://www.tableau.com/), and [forecast](https://CRAN.R-project.org/package=forecast).
+
+More information available on the package [RSocrata](https://dev.socrata.com/).
+
+Overview
+------------
+## *Hypothetical Business Case*
+### Stakeholder Ask
+### Stakeholder Requests
+
+The stakeholders have outlined the following key deliverables:
+
+1. **Time Series Forecasting**  
+   Develop a robust forecasting model to predict key performance indicators (KPIs), such as:
+   - Sales trends
+   - Traffic patterns
+   - Resource utilization  
+The model will leverage open-source data to provide accurate and actionable insights.
+
+2. **Visualization**  
+   Design dynamic and interactive dashboards in Tableau to:
+   - Effectively communicate insights
+   - Highlight both historical and forecasted trends  
+These dashboards will serve as a decision-making tool for stakeholders.
+
+3. **Actionable Insights**  
+   Use forecasted data trends to:
+   - Provide strategic recommendations
+   - Suggest operational improvements  
+The focus will be on turning data-driven insights into impactful business decisions.
+
+
+### Goals of the Project
+- **Demonstrate Feasibility:** Show how open data can be leveraged to address real-world business problems.
+- **Empower Decision-Making:** Provide stakeholders with data-driven forecasts and visualizations.
+- **Promote Open Source Tools:** Highlight the ease and effectiveness of using open-source tools like RSocrata and forecast for business applications.
+
+### Expected Deliverables
+1. A cleaned and processed dataset pulled from an open data source using the RSocrata package.
+2. Forecasted time series trends using the `forecast` package.
+3. A Tableau dashboard that visualizes both historical and forecasted data.
+4. A final report summarizing insights, recommendations, and methodologies.
+
+### Technical Stack
+- **Data Retrieval:** [RSocrata](https://dev.socrata.com/)
+- **Analysis and Forecasting:** [forecast](https://CRAN.R-project.org/package=forecast) in R
+- **Visualization:** [Tableau](https://www.tableau.com/)
+- **Programming Language:** R
+
+---
+
+# Next Steps
+1. Identify an open data source relevant to the business case (e.g., city traffic data, weather patterns, or retail sales).
+2. Set up the RSocrata package and retrieve the data.
+3. Perform data cleaning and exploratory data analysis (EDA).
+4. Develop and validate a time series forecasting model.
+5. Create a Tableau dashboard with visualizations.
+6. Present findings and actionable recommendations to stakeholders.
 
 
 Installation
@@ -35,15 +90,22 @@ Installation
 Install the stable version from [CRAN](https://CRAN.R-project.org/package=TSstudio):
 
 ``` r
-install.packages("TSstudio")
+## Install the required package with:
+## install.packages("RSocrata")
+
+library("RSocrata")
+
+## API Token Acess from the data.transportation.gov site
+df <- read.socrata(
+  "https://data.transportation.gov/resource/xgub-n9bw.json",
+  app_token = "YOURAPPTOKENHERE",
+  email     = "user@example.com",
+  password  = "fakepassword"
+)
 ```
 
-or install the development version from [Github](https://github.com/RamiKrispin/TSstudio):
+or for more detailed informaiton from the [SODA DEVLOPER SITE](https://dev.socrata.com/foundry/data.transportation.gov/xgub-n9bw):
 
-``` r
-# install.packages("devtools")
-devtools::install_github("RamiKrispin/TSstudio")
-```
 
 
 Usage
