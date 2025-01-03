@@ -26,7 +26,7 @@ Overview
 
 The [RSocrata](https://dev.socrata.com/) package provides a set of tools tha tallows you open data from governments, non-profits, and NGOs around the world. The goal of this project is to showcase how fun it is to get data from online open sources and repackage data. This project focuses on the utility of using time series data, [tableau](https://www.tableau.com/), and [forecast](https://CRAN.R-project.org/package=forecast).
 
-More information available on the package [RSocrata](https://dev.socrata.com/).
+More information available on the package [RSocrata](https://dev.socrata.com/) or for more information about the transportatin developer site please visit [US Department of Transportation](https://www.transportation.gov/developer).
 
 Overview
 ------------
