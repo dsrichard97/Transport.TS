@@ -67,7 +67,7 @@ The stakeholders have outlined the following key deliverables:
 Installation
 ------------
 
-Install the stable version from [CRAN](https://CRAN.R-project.org/package=TSstudio):
+Use the below API to be able to download the endpoints into your desired dataframe
 
 ``` r
 ## Install the required package with:
