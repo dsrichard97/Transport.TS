@@ -23,68 +23,36 @@
 
 Overview
 ------------
+This project leverages the [IATA and ICAO Codes API](https://rapidapi.com/vacationist/api/iata-and-icao-codes) to develop an interactive R Shiny web application. The app enables users to search, analyze, and visualize global airport and airline data. By integrating API-driven data retrieval with advanced data manipulation and visualization techniques, the project provides an intuitive platform for exploring global airport information, featuring dynamic charts and interactive visuals to enhance user experience.
 
-The [RSocrata](https://dev.socrata.com/) package provides a set of tools tha tallows you open data from governments, non-profits, and NGOs around the world. The goal of this project is to showcase how fun it is to get data from online open sources and repackage data. This project focuses on the utility of using time series data, [tableau](https://www.tableau.com/), and [forecast](https://CRAN.R-project.org/package=forecast).
-
-More information available on the package [RSocrata](https://dev.socrata.com/) or for more information about the transportatin developer site please visit [US Department of Transportation](https://www.transportation.gov/developer).
-
-Overview
-------------
-## *Hypothetical Business Case*
-### Stakeholder Ask
-### Stakeholder Requests
-
-The stakeholders have outlined the following key deliverables:
-
-### Goals of the Project
-- **Demonstrate Feasibility:** Show how open data can be leveraged to address real-world business problems.
-- **Empower Decision-Making:** Provide stakeholders with data-driven forecasts and visualizations.
-- **Promote Open Source Tools:** Highlight the ease and effectiveness of using open-source tools like RSocrata and forecast for business applications.
-
-### Expected Deliverables
-1. A cleaned and processed dataset pulled from an open data source using the RSocrata package.
-2. Forecasted time series trends using the `forecast` package.
-3. A Tableau dashboard that visualizes both historical and forecasted data.
-4. A final report summarizing insights, recommendations, and methodologies.
-
-### Technical Stack
-- **Data Retrieval:** [RSocrata](https://dev.socrata.com/)
-- **Analysis and Forecasting:** [forecast](https://CRAN.R-project.org/package=forecast) in R
-- **Visualization:** [Tableau](https://www.tableau.com/)
-- **Programming Language:** R
-
----
-
-# Next Steps
-1. Identify an open data source relevant to the business case (e.g., city traffic data, weather patterns, or retail sales).
-2. Set up the RSocrata package and retrieve the data.
-3. Perform data cleaning and exploratory data analysis (EDA).
-4. Develop and validate a time series forecasting model.
-5. Create a Tableau dashboard with visualizations.
-6. Present findings and actionable recommendations to stakeholders.
 
 
 Installation
 ------------
 
-Use the below API to be able to download the endpoints into your desired dataframe
+Use the below API to be able to download the endpoints into your desired dataframe using [Rapid API](https://rapidapi.com/hub)
 
 ``` r
-## Install the required package with:
-## install.packages("RSocrata")
+library(httr)
+library(jsonlite)
 
-library("RSocrata")
+# Function to get data from the API
+get_airport_data <- function(query, api_key) {
+  url <- paste0("https://vacationist.p.rapidapi.com/", query)
+  response <- GET(url, add_headers(
+    "X-RapidAPI-Key" = api_key,
+    "X-RapidAPI-Host" = "vacationist.p.rapidapi.com"
+  ))
+  content <- content(response, as = "text")
+  data <- fromJSON(content, flatten = TRUE)
+  return(data)
+}
 
-## API Token Acess from the data.transportation.gov site
-df <- read.socrata(
-  "https://data.transportation.gov/resource/xgub-n9bw.json",
-  app_token = "YOURAPPTOKENHERE",
-  email     = "user@example.com",
-  password  = "fakepassword"
-)
+# Example: Fetching airports
+api_key <- "YOUR_API_KEY"
+airport_data <- get_airport_data("airports", api_key)
+print(airport_data)
 ```
-
-or for more detailed informaiton from the [SODA DEVLOPER SITE](https://dev.socrata.com/foundry/data.transportation.gov/xgub-n9bw):
 
 
 
