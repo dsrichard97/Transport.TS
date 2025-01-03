@@ -36,26 +36,6 @@ Overview
 
 The stakeholders have outlined the following key deliverables:
 
-1. **Time Series Forecasting**  
-   Develop a robust forecasting model to predict key performance indicators (KPIs), such as:
-   - Sales trends
-   - Traffic patterns
-   - Resource utilization  
-The model will leverage open-source data to provide accurate and actionable insights.
-
-2. **Visualization**  
-   Design dynamic and interactive dashboards in Tableau to:
-   - Effectively communicate insights
-   - Highlight both historical and forecasted trends  
-These dashboards will serve as a decision-making tool for stakeholders.
-
-3. **Actionable Insights**  
-   Use forecasted data trends to:
-   - Provide strategic recommendations
-   - Suggest operational improvements  
-The focus will be on turning data-driven insights into impactful business decisions.
-
-
 ### Goals of the Project
 - **Demonstrate Feasibility:** Show how open data can be leveraged to address real-world business problems.
 - **Empower Decision-Making:** Provide stakeholders with data-driven forecasts and visualizations.
